@@ -9,11 +9,12 @@
 
   <ItemGroup>
     <Folder Include="Data\Migrations\" />
-    <Folder Include="Views\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
   </ItemGroup>
 

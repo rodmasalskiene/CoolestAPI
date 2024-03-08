@@ -1,26 +1,28 @@
-﻿using CoolestAPI.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.Logging;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace CoolestAPI.Controllers
+{
+    public class UserController : Controller
+    {
+        private readonly ILogger<UserController> _logger;
 
-        public class UserController : Controller
+        public UserController(ILogger<UserController> logger)
         {
-            [HttpGet]
-            public ActionResult<IEnumerable<User>> Get()
-            {
-                // Retorna uma lista de usuários
-                return new List<User>()
-            {
-                new User() { Id = 1, Name = "João Silva", Email = "joaosilva@email.com" },
-            };
-            }
+            _logger = logger;
         }
-  
+        public ActionResult Index()
+        {
+            _logger.LogInformation("Tu tá no index do UserController");
+            return View();
+        }
+    }
+}
 
     //// Código do gemini 
     ///
@@ -103,6 +105,3 @@ namespace CoolestAPI.Controllers
     //        }
     //    }
     //}
-
-}
-}

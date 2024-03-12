@@ -1,28 +1,39 @@
-﻿using Microsoft.Extensions.Logging;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-using System.Web.Mvc;
+﻿//using Microsoft.AspNetCore.Mvc;  // REQUIRED
+//using Microsoft.EntityFrameworkCore.ChangeTracking;
+//using Microsoft.Extensions.Logging;
+////using System;
+////using System.Collections.Generic;
+////using System.Linq;
+////using System.Text;
+////using System.Threading.Tasks;
+////using System.Web.Mvc;
 
-namespace CoolestAPI.Controllers
-{
-    public class UserController : Controller
-    {
-        private readonly ILogger<UserController> _logger;
+//namespace CoolestAPI.Controllers
+//{
+//    [ApiController]
+//    [Route("[controller]")]
 
-        public UserController(ILogger<UserController> logger)
-        {
-            _logger = logger;
-        }
-        public ActionResult Index()
-        {
-            _logger.LogInformation("Tu tá no index do UserController");
-            return View();
-        }
-    }
-}
+//    public class UserController : ControllerBase
+//    {
+//        private readonly ILogger<UserController> _logger;
+
+//        public UserController(ILogger<UserController> logger)
+//        {
+//            _logger = logger;
+//        }
+
+//        [HttpGet("rota1")]
+//        [Route("rota1/Get")]
+//        public IActionResult Get() {
+//            return View("./Views/User/Index.cshtml");
+//        }
+//        public ActionResult Index()
+//        {
+//            //_logger.LogInformation("Tu tá no index do UserController");
+//            return View("./Views/User/Index.cshtml");
+//        }
+//    }
+//}
 
     //// Código do gemini 
     ///

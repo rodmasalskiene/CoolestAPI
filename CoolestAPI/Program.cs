@@ -1,37 +1,15 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//builder.WebHost.UseKestrel().UseUrls("http://localhost:6262", "http://localhost:7045");
+builder.WebHost.UseKestrel();
+
 var app = builder.Build();
 
+app.MapGet("/", () => "Hello, World!");
 app.MapGet("/teste", () => "salve kk");
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseDefaultFiles();
-}
-
-app.UseHttpsRedirection();
-
+//app.Run("http://localhost:6262");
 app.Run();
-
-//// Add services to the container.
-//builder.Services.AddControllersWithViews();
-
-//var app = builder.Build();
-
-//// Configure the HTTP request pipeline.
-//if (!app.Environment.IsDevelopment())
-//{
-//    app.UseExceptionHandler("/Home/Error");
-//}
-//app.UseStaticFiles();
-
-//app.UseRouting();
-//app.UseAuthorization();
-
-//app.MapControllerRoute(
-//    name: "default",
-//    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-//app.Run();

@@ -7,18 +7,11 @@ namespace CoolestAPI.Controllers
     [Route("[controller]")]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;    
-
-        public HomeController(ILogger<HomeController> logger)
+        [HttpGet("/")]
+        public IActionResult Index()
         {
-            _logger = logger;
-        }
-
-        [HttpGet(Name = "GetTest")]
-        public ActionResult Index()
-        {
-            return Ok("Foi?");
-            //return View("Home/Index");
+            ViewData["Message"] = "funciona pelo amor de Deus";
+            return View("Index");
         }
     }
 }

@@ -1,6 +1,5 @@
-@CoolestAPI_HostAddress = http://localhost:6262
-
-GET {{CoolestAPI_HostAddress}}/
+@CoolestAPI_HostAddress = http://localhost:5000
+GET {{CoolestAPI_HostAddress}}/teste
 Accept: application/json
 
 ##
